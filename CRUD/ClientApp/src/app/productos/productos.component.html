@@ -1,0 +1,102 @@
+<body>
+  <div class="container mt-4">
+    <div class="col-lg-7 offset-lg-2 ">
+      <div class="card-body text-center card titulo " id="titulo">
+        <h1>Productos</h1>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-lg-5">
+        <div class="card">
+          <div>
+            <div class="card-body" id="tabla1">
+              <h4 class="titulo text-center">agregar producto</h4>
+              <div>
+                <form [formGroup]="form" (ngSubmit)="GuardarProducto()">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-file-signature"></i></span>
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="nombre">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                    <input formControlName="precio" type="number" class="form-control" placeholder="precio">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-sort-amount-up-alt"></i></span>
+                    <input formControlName="cantidad" type="number" class="form-control" placeholder="cantidad">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-dolly"></i></span>
+                    <input formControlName="registro" type="date" class="form-control" placeholder="registro">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-dolly"></i></span>
+                    <input formControlName="idalmacen" type="number" class="form-control" placeholder="idalmacen">
+                  </div>
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success boton"> <i class="fas fa-database negro"></i> {{b}} </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+
+        <div class="card ">
+          <div class="card-body " id="tabla1">
+            <h2 class="titulo text-center">Lista de productos</h2>
+
+            <div>
+              <div class="mat-elevation-z8 tabnav">
+
+                <table *ngIf="listProducto.length > 0" class="table">
+                  <thead>
+                    <tr>
+                      <td>ID</td>
+                      <td>nombre</td>
+                      <td>precio</td>
+                      <td>cantidad</td>
+                      <td>registro</td>
+                      <td>idalmacen</td>
+
+                      <td>editar</td>
+                      <td>eliminar</td>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let producto of listProducto">
+                      <td>{{producto.id}}</td>
+                      <td>{{producto.nombre}}</td>
+                      <td>{{producto.precio}}</td>
+                      <td>{{producto.cantidad}}</td>
+                      <td>{{producto.registro}}</td>
+                      <td>{{producto.idalmacen}}</td>
+
+                      <td><button (click)="EditarProducto(producto)"> <i class="far fa-edit text-info"></i> </button></td>
+                      <td><button (click)="EliminarProducto(producto.id)"><i class="far fa-trash-alt text-danger"></i></button></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <div>
+                <h5 *ngIf="listProducto.length== 0"> no hay productos que mostrar</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+</body>
+<br />
+<br />

@@ -1,0 +1,71 @@
+#divbut {
+  background-color: lightskyblue;
+}
+
+.verde-icono {
+  color: #3eb921
+}
+
+.rojo-icono {
+  color: #ff0000
+}
+
+.fecha {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.negro {
+  color: black;
+}
+
+.boton {
+  background-color: #3eb921;
+  color: black;
+}
+
+body {
+  background-color: darkgray;
+  border: 1px solid black;
+}
+
+#tabla1 {
+  background-color: lightgrey;
+}
+
+#titulo {
+  border: 1px solid purple;
+  background-color: lightblue;
+}
+
+button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.tabnav {
+  width: 100%;
+  background-color: #990792;
+  overflow: auto;
+}
+
+#tabla {
+  margin: auto;
+}
+
+.algo {
+  width: 100%;
+}
+
+.verde {
+  color: green;
+}
+
+.azul {
+  color: blue;
+}

@@ -1,0 +1,90 @@
+<body>
+  <div class="container mt-4">
+    <div class="col-lg-7 offset-lg-2 ">
+      <div class="card-body text-center card titulo " id="titulo">
+        <h1>Almacen</h1>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-lg-5">
+        <div class="card">
+          <div>
+            <div class="card-body" id="tabla1">
+              <h4 class="titulo text-center">agregar Almacen</h4>
+              <div>
+                <form [formGroup]="form" (ngSubmit)="GuardarAlmacen()">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-file-signature"></i></span>
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="nombre">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-money-bill-wave"></i></span>
+                    <input formControlName="direccion" type="text" class="form-control" placeholder="direccion">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-sort-amount-up-alt"></i></span>
+                    <input formControlName="idencargado" type="text" class="form-control" placeholder="idencargado">
+                  </div>
+                
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success boton"> <i class="fas fa-database negro"></i> {{b}} </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+
+        <div class="card ">
+          <div class="card-body " id="tabla1">
+            <h2 class="titulo text-center">Lista de Almacen</h2>
+
+            <div>
+              <div class="mat-elevation-z8 tabnav">
+
+                <table *ngIf="listAlmacen.length > 0" class="table">
+                  <thead>
+                    <tr>
+                      <td>ID</td>
+                      <td>nombre</td>
+                      <td>direccion</td>
+                      <td>idencargado</td>
+                 
+                      <td>editar</td>
+                      <td>eliminar</td>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let almacen of listAlmacen">
+                      <td>{{almacen.id}}</td>
+                      <td>{{almacen.nombre}}</td>
+                      <td>{{almacen.direccion}}</td>
+                      <td>{{almacen.idencargado}}</td>
+                      
+                      <td><button (click)="EditarAlmacen(almacen)"> <i class="far fa-edit text-info"></i> </button></td>
+                      <td><button (click)="EliminarAlmacen(almacen.id)"><i class="far fa-trash-alt text-danger"></i></button></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <div>
+                <h5 *ngIf="listAlmacen.length== 0"> no hay disponibilidad de almacenes </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+</body>
+<br />
+<br />
